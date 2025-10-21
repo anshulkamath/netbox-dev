@@ -59,3 +59,33 @@ Source this environment:
 export `grep -ve "^#" env/netbox.env | xargs`
 just run-netbox runserver
 ```
+
+## Plugins
+
+### Open-Source
+
+Plugins can be run from source by installing them in editable mode.
+To get started, clone the desired plugin (preferably to a close-by directory, like `plugins/`) and run the following command in your virtualenv:
+
+```bash
+pip install -e plugins/{plugin_name}
+```
+
+### Custom Plugins
+
+Custom plugins are identical to open-source plugins, except for the fact that they may be actively developed against.
+To get started with a new plugin, run the following in your virtual environment:
+
+```bash
+just new-plugin
+pip install -e plugins/{{plugin_name}}
+
+# add the plugin to PLUGINS in configuration.py
+just run-netbox makemigrate
+```
+
+#### References
+
+- [Netbox Plugin Development Docs](https://netboxlabs.com/docs/netbox/plugins/development/)
+- [Netbox Plugin Development Tutorial](https://github.com/netbox-community/netbox-plugin-tutorial)
+- [Netbox Plugin Demo](https://github.com/netbox-community/netbox-plugin-demo)
