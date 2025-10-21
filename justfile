@@ -29,3 +29,9 @@ load-database fname:
 # Destroy the netbox database
 clean-netbox-database:
     @docker compose exec -it postgres psql -U netbox -c 'TRUNCATE dcim_rack CASCADE; TRUNCATE dcim_device CASCADE;'
+
+# Create a new NetBox plugin
+new-plugin:
+  @which -s cookiecutter || { echo "cookiecutter not found in PATH" > /dev/stderr ; exit 1 ; }
+  @test -d plugins || mkdir plugins
+  @cd plugins && cookiecutter https://github.com/netbox-community/cookiecutter-netbox-plugin.git
