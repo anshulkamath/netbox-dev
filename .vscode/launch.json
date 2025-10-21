@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Netbox",
+      "type": "debugpy",
+      "request": "launch",
+      "args": [
+        "runserver",
+        "--noreload",
+      ],
+      "envFile": "${workspaceFolder}/env/netbox.env",
+      "django": true,
+      "autoStartBrowser": false,
+      "program": "${workspaceFolder}/netbox/netbox/manage.py"
+    }
+  ]
+}

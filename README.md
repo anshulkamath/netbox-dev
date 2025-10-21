@@ -89,3 +89,9 @@ just run-netbox makemigrate
 - [Netbox Plugin Development Docs](https://netboxlabs.com/docs/netbox/plugins/development/)
 - [Netbox Plugin Development Tutorial](https://github.com/netbox-community/netbox-plugin-tutorial)
 - [Netbox Plugin Demo](https://github.com/netbox-community/netbox-plugin-demo)
+
+### Debugging
+
+Netbox is a Django app, and Django has a large amount of developer tooling built around it.
+This repository has a preconfigured `launch.json`, which allows you to run a Python debugger (`debugpy`) against the Netbox source in VSCode (or any `launch.json`-compatible IDE).
+Additionally, if you've installed plugins locally (either from source or custom-developed), then you will be able to debug this source as well.
