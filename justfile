@@ -1,7 +1,7 @@
 set dotenv-load := true
 set dotenv-path := 'env/netbox.env'
 
-run-netbox *cmd:
+run-netbox *cmd="runserver":
   @test -n "$VIRTUAL_ENV"
   @python3 netbox/netbox/manage.py {{cmd}}
 
